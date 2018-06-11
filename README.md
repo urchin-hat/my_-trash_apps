@@ -1,2 +1,2 @@
-# my_-trash_apps
-test app
+# ゴミ箱
+試しに作っただけ
