@@ -4,7 +4,6 @@ import traceback, re, unicodedata
 
 import urllib.request
 import urllib.parse
-from collections import OrderedDict
 
 from bs4 import BeautifulSoup
 import MeCab as mecab
