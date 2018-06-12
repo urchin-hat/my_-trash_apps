@@ -1,5 +1,6 @@
 # MeCabサンプルアプリ
 青空文庫の作品のXHTML版の形態解析をします。
+
 ![MeCabApp](https://raw.githubusercontent.com/urchin-hat/my_trash_apps/master/images/MeCabApp.gif)
 
 ## 環境
