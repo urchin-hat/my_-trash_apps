@@ -4,9 +4,11 @@
 ![MeCabApp](https://raw.githubusercontent.com/urchin-hat/my_trash_apps/master/images/MeCabApp.gif)
 
 ## 環境
-Python 3.6.5
-Flask          1.0.2
-mecab-python3  0.7
+|||
+|:---:|:---:|
+|Python|3.6.5|
+|Flask|1.0.2|
+|mecab-python3 |0.7|
 
 ### 構築手順
 

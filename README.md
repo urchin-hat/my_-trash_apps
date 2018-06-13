@@ -3,3 +3,5 @@
 
 ## 一覧
 ### 1. MeCabを使ったアプリ [→](https://github.com/urchin-hat/my_trash_apps/tree/master/MeCabSampleApp)
+
+### 2. Compass APIを使ったアプリ [→](https://github.com/urchin-hat/my_trash_apps/tree/masterConnpassAPIApp)
