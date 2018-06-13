@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+{% block body %}
+<a href="/"><img src="{{ url_for('static', filename='images/connpass_logo_1.png') }}" alt="logo" width="96px"></a>
+<h3>Compassサンプルアプリ</h3>
+<p>
+  <span><a href="https://connpass.com/about/api/" target="_blank">Connpass api</a>を利用した簡単なWEBアプリです。</span>
+  <br />複数のワードで検索する場合は","で書いてください。
+  <br /> 例) Python, Flask
+</p>
+<fieldset>
+  <legend>検索条件</legend>
+  <form method="POST" action="/">
+    <table>
+      <tr>
+	<td align="right"><label for="ワード">調べたいワード：</label></td>
+	<td><input type="text" name="keyword" size="60" value="Python"></td>
+      </tr>
+      <tr>
+	<td align="right"><label for="検索条件">検索条件：</label></td>
+	<td><input type="radio" name="search" value="and" checked>AND <input type="radio" name="search" value="or">OR</td>
+      </tr>
+      <tr>
+	<td align="right"><label for="表示順">検索結果の表示順：</label></td>
+	<td>
+	  <input type="radio" name="view" value="1" checked>更新日時順
+	  <input type="radio" name="view" value="2">開催日時順
+	  <input type="radio" name="view" value="3">新着順
+	</td>
+      </tr>
+      <tr>
+	<td align="right"><label for="表示件数">表示件数：</label></td>
+	<td>
+	  <input type="number" name="number" value="10" max="100" min="10">
+	</td>
+    </table>
+    <hr>
+    <input type="submit" value="送信">
+  </form>
+</fieldset>
+{% if result|length != 0 %}
+<h3>検索結果</h3>
+<hr>
+<table border="1">
+  <tr>
+    <th>タイトル</th>
+    <th>キャッチ</th>
+    <th>開催場所</th>
+    <th>Twitterのハッシュタグ</th>
+    <th>開始時間</th>
+    <th>終了時間</th>
+  </tr>
+  {% for key, value in result.items() %}
+  <tr>
+    <td><a href="{{ value[1] }}" target="_blank">{{ value[0] }}</a></td>
+    {% for item in value[2:] %}
+      <td>{{ item }}</td>
+    {% endfor %}
+  </tr>
+  {% endfor %}
+</table>
+<hr>
+{% endif %}
+{% endblock %}
