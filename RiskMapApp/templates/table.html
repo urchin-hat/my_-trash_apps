@@ -1,0 +1,86 @@
+<!-- 検索カード -->
+<div class="row">
+  <div class="col s12 m12">
+    <div class="card teal lighten-5">
+      <form method="POST" action="/">
+	<div class="card-content black-text">
+	  <span class="card-title">検索条件</span>
+	  <br>
+	  <!-- ここに書く -->
+	  <div class="input-field col s12">
+            <input name="search_word" type="text" class="validate">
+            <label>検索ワード</label>
+          </div>
+	</div>
+	<div style="padding: 0px 30px;">
+	  <label>区市町名<label>
+	      <select name="city" class="browser-default" style="width: 200px">
+		<option value="" selected>全て</option>
+		{% for item in select_list %}
+		<option value={{ item }}>{{ item }}</option>
+		{% endfor %}
+	      </select>
+	</div>
+        <div class="col s12" style="padding:10px 30px;">
+	  <label>順位<label></div>
+	<div class="col s3" style="padding:0px 30px;">
+          <p class="left-align"><label><input name="order" type="radio" value="建物倒壊危険度順位" checked /><span>建物倒壊危険度順位</span></label></p>
+	</div>
+	<div class="col s3">
+	  <p class="left-align"><label><input name="order" type="radio" value="火災危険度順位"><span>火災危険度順位</span></label></p>
+	  </div>
+	<div class="col s3">
+	  <p class="left-align"><label><input name="order" type="radio" value="災害時活動困難度順位"><span>災害時活動困難度順位</span></label></p>	  
+	</div>
+	<div class="col s3">
+          <p class="left-align"><label><input name="order" type="radio" value="総合危険度順位"><span>総合危険度順位</span></label></p>
+        </div>
+	
+	<div class="col s12" style="padding:10px 30px;">
+          <label>表示順<label></div>
+        <div class="col s3" style="padding:0px 30px;">
+          <p class="left-align"><label><input name="sort" type="radio" value="Desc" checked /><span>降順(危険)</span></label></p>
+        </div>
+        <div class="col s3">
+          <p class="left-align"><label><input name="sort" type="radio" value="Asc"><span>昇順(安全)</span></label></p>
+        </div>
+        <div class="col s3"></div>
+        <div class="col s3"></div>
+	<br><br><br><br><br><br><br><br><br>
+	<div class="card-action">
+	  <button class="btn waves-effect waves-light blue darken-1" type="submit">検索</button>
+	</div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- 一覧カード -->
+<div class="row">
+  <div class="col s12 m12">
+    <div class="card light-blue darken-4">
+      <div class="card-content white-text">
+        <span class="card-title">地域危険度一覧</span>
+	<table class="centered responsive-table">
+	  <thead>
+            <tr>
+	      {% for item in label %}
+	      <th>{{ item }}</th>
+              {% endfor %}
+            </tr>
+          </thead>
+
+	  <tbody>
+	    {% for items in result %}
+            <tr>
+	      {% for item in items %}
+              <td>{{ item }}</td>
+	      {% endfor %}
+            </tr>
+	    {% endfor %}
+	  </tbody>
+	</table>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block body %}
+<!-- Section 1 -->
+<div class="section no-pad-bot blue-grey lighten-5" id="1">
+  <div class="container">
+    <br><br>
+    <h2 class="header center">このアプリについて</h2>
+    <div class="row center">
+      <h5 class="header col s12 light">
+	Pandasの練習に作成した簡単なアプリ、Flask + Materializeを使用して作っています。<br>
+	<a href="http://www.toshiseibi.metro.tokyo.jp/bosai/chousa_6/table.htm" target="_blank">地震に関する地域危険度測定調査 地域危険度一覧表（区市町別）</a>
+	を使用しています。<br>
+      </h5>
+    </div>
+    <div class="row center">
+      <a href="#2" id="download-button" class="btn-large waves-effect waves-light blue darken-3">早速見て見ましょう！</a>
+    </div>
+    <br><br>
+  </div>
+</div>
+
+<!-- Section2 -->
+<div class="section no-pad-bot blue-grey lighten-4" id="2">
+  <div class="container">
+    <br><br>
+    {% include "table.html" %}
+    <br><br>
+  </div>
+</div>
+  
+  <!-- Section 3 -->
+  <div class="section no-pad-bot blue-grey lighten-3" id="3">
+    <div class="container">
+      <br><br>
+      <br><br>
+    </div>
+  </div>
+  {% endblock %}
